@@ -18,12 +18,11 @@
 
 		// Get subtask for table
 		include 'get/get-jira-issue-subtask.php';
-		if( isset( $jsonDecode[0] ) ) {
-			array_unshift( $jsonDecode, [ 'key' => $issueKey ] );
-			$tasksTr = '';
-			foreach( $jsonDecode as $subtask ) {
-				$issueKey = $subtask['key'];
-				$tasksTr .= '
+		array_unshift( $jsonDecode, [ 'key' => $issueKey ] );
+		$tasksTr = '';
+		foreach( $jsonDecode as $issue ) {
+			$issueKey = $issue['key'];
+			$tasksTr .= '
     <tr>
       <td>
         <div class="content-wrapper">
@@ -34,15 +33,26 @@
               <ac:parameter ac:name="serverId">' . $conflAppId . '</ac:parameter>
               <ac:parameter ac:name="key">' . $issueKey . '</ac:parameter>
             </ac:structured-macro>
+          </span>
+        </div>
+      </td>
+      <td>
+        <div class="content-wrapper">
+          <span style="color: rgb(112,112,112);">
             <ac:link>
               <ri:user ri:userkey="' . $assigneeUserKey . '"/>
             </ac:link>
+          </span>
+        </div>
+      </td>
+      <td>
+        <div class="content-wrapper">
+          <span style="color: rgb(112,112,112);">
             <time datetime="' . gmdate('Y-m-d', strtotime($task['complete_till'])) . '"/>
           </span>
         </div>
       </td>
     </tr>';
-			}
 		}
 
 		$data = array(
@@ -194,17 +204,16 @@
   </colgroup>
   <tbody>
     <tr>
-      <th style="text-align: center;">Jira issue and its status. Assignee. Due date</th>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p>
-          Fill out the following form:
-        </p>
-        <p>
-          <em>Jira issue (Macros "Jira Issue/Filter" with option "Show summary") @ Assignee // Due date</em>
-        </p>
-      </td>
+      <th style="text-align: center;">
+        <p>Задача в Jira и ее статус</p>
+        <p><em>(Макрос "Jira Issue/Filter" с опцией "Show summary")</em></p>
+      </th>
+      <th style="text-align: center;">
+        <p>@ Ответственный</p>
+      </th>
+      <th style="text-align: center;">
+        <p>// Дата исполнения</p>
+      </th>
     </tr>
     ' . $tasksTr . '
   </tbody>
@@ -235,7 +244,7 @@
 		);
 
 		include 'post/post-confl-page.php';
-	
+
 		$conflPageId = $jsonDecode['id'];
 
 		// Post amoCRM lead id to confluence page property

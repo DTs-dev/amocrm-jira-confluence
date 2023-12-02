@@ -66,7 +66,7 @@
 		defined('CONFL_URL') or define('CONFL_URL', CONFL_URL_SCHEME . '://' . CONFL_DOMAIN);
 		
 		// Confluence application links
-		$conflAppName = 'Jira'									// Jira application name from confluence application links
+		$conflAppName = 'Jira';									// Jira application name from confluence application links
 		$conflAppId = '61d2kfu7-987e-28c8-960a-2d2c73f97bn1';					// Jira application id from url of this application editing
 
 		// Confluence cookie authentication

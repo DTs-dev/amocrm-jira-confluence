@@ -12,7 +12,7 @@
 			$amoLeadUrl = AMO_URL . '/leads/detail/' . $leadId;
 			$customFields = $jsonDecode['_embedded']['items'][0]['custom_fields'];
 
-			foreach( $customFields as $fieldsArray => $customField ) {
+			foreach( $customFields as $customField ) {
 				if( $customField['name'] === $directionField ) {
 					$directions = array_column( $customField['values'], 'value' );
 					if( !function_exists( 'space_to_dash' ) ) {
