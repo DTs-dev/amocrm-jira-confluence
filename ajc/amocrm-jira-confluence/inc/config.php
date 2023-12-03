@@ -20,7 +20,7 @@
 		$issueTypeNameTS = 'Commercial support';
 		$issueAssigneeTS = 'willson.j';
 		$issueTypeName = $issueTypeNameDefault;
-		
+
 		// Jira custom fields
 		$epicNameField = '18888';
 		$epicLinkField = '19999';
@@ -31,21 +31,21 @@
 		$contactField = '15555';
 		$leadField = '16666';
 		$directionFieldIssue = '17777';
-		
+
 		// Jira statuses
 		$jiraIssueStatusToDo = '22222';
 		$jiraIssueStatusInProgress = '33333';
 		$jiraIssueStatusDone = '44444';
-		
+
 		// Jira transitions
 		$transitionToDo = '31';
 		$transitionToDoDone = '41';
 		$transitionInProgressDone = '51';
-		
+
 		// Jira resolutions
 		$resolutionDoneId = '1';
 		$resolutionNotDoneId = '3';
-		
+
 		// Default jira comment for empty result
 		$noResultComment = 'Ready';
 
@@ -64,10 +64,13 @@
 		defined('SPACE_KEY') or define('SPACE_KEY', 'CRM');					// Confluence space key for creating pages
 		defined('ANCESTORS') or define('ANCESTORS', 11111111);					// Confluence page id in space for creating pages
 		defined('CONFL_URL') or define('CONFL_URL', CONFL_URL_SCHEME . '://' . CONFL_DOMAIN);
-		
+
 		// Confluence application links
 		$conflAppName = 'Jira';									// Jira application name from confluence application links
 		$conflAppId = '61d2kfu7-987e-28c8-960a-2d2c73f97bn1';					// Jira application id from url of this application editing
+
+		// Confluence content property
+		$conflAmoLeadId = 'amoLeadId';								// Content property for external ID (amoCRM lead ID) in confluence page
 
 		// Confluence cookie authentication
 //		defined('COOKIE_CONFL') or define('COOKIE_CONFL', PARENT_DIR . 'cookie-confl.txt');
@@ -95,7 +98,7 @@
 
 		// Stage for not imple leads
 		$amoLeadNotImpleStageId = '143';
-		
+
 		// Text for the lead field if there is no lead
 		$amoNoLead = '!!!NO LEAD!!!';
 
