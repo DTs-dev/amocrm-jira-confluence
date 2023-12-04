@@ -248,7 +248,7 @@
 		$conflPageId = $jsonDecode['id'];
 
 		// Post amoCRM lead id to confluence page property
-		$data = [ 'key' => $conflAmoLeadId, 'value' => [ 'value' => $leadId ] ];
+		$data = [ 'key' => 'amoCrmLead', 'value' => [ 'id' => $leadId ] ];
 		include 'post/post-confl-property.php';
 
 		// Post confluence page label
