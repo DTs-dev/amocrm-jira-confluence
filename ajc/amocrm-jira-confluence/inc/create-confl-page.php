@@ -205,15 +205,15 @@
   <tbody>
     <tr>
       <th style="text-align: center;">
-        <p>Задача в Jira и ее статус</p>
-        <p><em>(Макрос "Jira Issue/Filter" с опцией "Show summary")</em></p>
+        <p>Jira issue and its status</p>
+        <p><em>(Macros "Jira Issue/Filter" with option "Show summary")</em></p>
       </th>
       <th style="text-align: center;">
-        <p>@ Ответственный</p>
+        <p>@ Assignee</p>
       </th>
       <th style="text-align: center;">
-        <p>// Дата исполнения</p>
-      </th>
+        <p>// Due date</p>
+      </th>	
     </tr>
     ' . $tasksTr . '
   </tbody>
